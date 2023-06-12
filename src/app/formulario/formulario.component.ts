@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+  
   addressForm = this.fb.group({
     company: null,
     firstName: [null, Validators.required],
@@ -88,6 +89,6 @@ export class FormularioComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit(): void {
-    alert('Você ganha uma pontuação extra se fizer aparecer aqui o nome digitado no campo "Company"');
+    alert(this.addressForm.controls.company.value);
   }
 }

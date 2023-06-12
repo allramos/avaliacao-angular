@@ -10,8 +10,17 @@ export class ContaService {
   constructor() { }
 
   // Crie aqui um método para depositar um valor na conta
-
-
+  depositar(valor: number) {
+    this.saldo += valor;
+  }
 
   // Crie aqui um método para sacar um valor da conta
+  sacar(valor: number) {
+    this.saldo -= valor;
+  }
+
+  pegaSaldo(){
+    return this.saldo;
+  }
+
 }
