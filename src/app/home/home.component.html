@@ -15,3 +15,22 @@
 <button mat-stroked-button color="accent" (click)="sacar(valor.value); valor.value = ''">
     Sacar
 </button>
+
+<!-- Usando ngIf para todas as condições -->
+<p *ngIf="saldoAtual % 2 == 0">O saldo é um número par.</p>
+<p *ngIf="saldoAtual % 2 == 1">O saldo é um número ímpar.</p>
+
+<!-- Usando ngIf/Else -->
+<!-- <p *ngIf="saldoAtual % 2 == 0;else outraopcao">O saldo é um número par.</p>
+<ng-template #outraopcao>
+    <p>O saldo é um número ímpar.</p>
+</ng-template> -->
+
+<div *ngFor="let fruta of lista;let i = index">
+   <p *ngIf="(i+1) % 2 == 0" style="color: blue;">{{i+1}} - {{ fruta }}</p>
+   <p *ngIf="(i+1) % 2 == 1" style="color: red;">{{i+1}} - {{ fruta }}</p>
+</div>
+
+<div *ngFor="let aluno of alunos">
+    {{ aluno.nome}}: {{aluno.nota}}
+</div>
